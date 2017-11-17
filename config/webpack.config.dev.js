@@ -202,12 +202,19 @@ module.exports = {
             // it's runtime that would otherwise processed through "file" loader.
             // Also exclude `html` and `json` extensions so they get processed
             // by webpacks internal loaders.
-            exclude: [/\.js$/, /\.html$/, /\.json$/, /\.scss$/],
+            exclude: [/\.js$/, /\.html$/, /\.json$/, /\.scss$/, /\.woff2$/ ],
             loader: require.resolve('file-loader'),
             options: {
               name: 'static/media/[name].[hash:8].[ext]',
             },
           },
+          {
+            test: /\.(eot|svg|ttf|woff|woff2)$/,
+            loader: require.resolve('file-loader'),
+            options: {
+              name: 'static/media/[name].[ext]',
+            },
+        },
         ],
       },
       // ** STOP ** Are you adding a new loader?
