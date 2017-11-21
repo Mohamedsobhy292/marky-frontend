@@ -8,7 +8,76 @@
 body {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  background: #f0f0f0;
   font-family: 'Roboto', sans-serif;
+  color: #868689;
+}
+
+ul,li {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 1200px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+button {
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+
+.primary-btn {
+  background: #66BFBF;
+  color: #fff;
+  &:hover {
+    background: lighten(#66BFBF, 5%);
+  }
+}
+
+.main-nav {
+  height: 60px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 30px;
+  padding-right: 30px;
+  box-shadow: 0px 0 20px 6px #dadada;
+  font-size: 14px;
+  &__list {
+    flex-basis: 33.33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &.right-list {
+      justify-content: flex-end;
+      li {
+        margin-left: 10px;
+      }
+    }
+    &.left-list {
+      justify-content: flex-start;
+      li {
+        margin-right: 10px;
+      }
+    }
+    .primary-btn {
+      padding: 6px 15px;
+    }
+  }
 }
 
 
