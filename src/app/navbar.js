@@ -1,38 +1,53 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import logo from '../assets/img/logo.svg';
 
-export default class extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      loggedIn: false,
-    };
-  }
-  render() {
-    const { loggedIn } = this.state.loggedIn;
-    return (
-      <nav className="main-nav">
-        <ul className="main-nav__list left-list">
-          <li className="main-nav__link">Boards</li>
+const Navbar = ({loggedIn, userName}) => {
+  function userArea() {
+    if (loggedIn) {
+      return (
+        <ul className="main-nav__list right-list">
+          <li className="main-nav__link user-name">
+            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg" className="user-img" alt="userPic" />
+            <span className="user-title">{userName}</span>
+          </li>
+          <li className="main-nav__link">
+            <button className="primary-btn">New</button>
+          </li>
         </ul>
-        <div className="main-nav__list">
-          <img src={logo} alt="" height="50" />
-        </div>
-        {loggedIn ?
-          <ul className="main-nav__list right-list">
-            <li className="main-nav__link">Mohamed Sobhy</li>
-            <li className="main-nav__link">
-              <button className="primary-btn">New</button>
-            </li>
-          </ul> :
-          <ul className="main-nav__list right-list">
-            <li className="main-nav__link">Sign Up</li>
-            <li className="main-nav__link">
-              <button className="primary-btn">Login</button>
-            </li>
-          </ul>
-          }
-      </nav>
+      );
+    }
+    return (
+      <ul className="main-nav__list right-list">
+        <li className="main-nav__link">Login</li>
+        <li className="main-nav__link">
+          <button className="primary-btn">Sign Up</button>
+        </li>
+      </ul>
     );
   }
-}
+  return (
+    <nav className="main-nav">
+      <ul className="main-nav__list left-list">
+        {loggedIn ?
+          <li className="main-nav__link">Boards</li> : <li className="main-nav__link">Sign Up</li>
+        }
+      </ul>
+      <div className="main-nav__list">
+        <img src={logo} alt="" height="50" />
+      </div>
+      {userArea()}
+    </nav>
+  );
+};
+
+Navbar.defaultProps = {
+  userName: 'Stranger',
+};
+
+Navbar.propTypes = {
+  loggedIn: PropTypes.bool.isRequired,
+  userName: PropTypes.string,
+};
+
+export default Navbar;
