@@ -6,6 +6,10 @@
     url('../assets/fonts/Roboto-Regular.ttf')  format('truetype');
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -49,23 +53,30 @@ button:focus {
   }
 }
 
+/// Navbar
+
 .main-nav {
   height: 60px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
   background: #fff;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0 0 20px 6px #dadada;
   font-size: 14px;
   padding-left: 15px;
   padding-right: 15px;
+  border-bottom: 1px solid #cdcdcd;
+
   @media screen and (min-width: 480px) {
     padding-left: 30px;
     padding-right: 30px;
   }
 
   &__list {
-    flex: 1 ;
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,6 +84,7 @@ button:focus {
     &.right-list {
       justify-content: flex-end;
       width: 50%;
+
       li {
         margin-left: 15px;
       }
@@ -80,6 +92,7 @@ button:focus {
 
     &.logo-container {
       justify-content: flex-start;
+
       @media screen and(min-width: 480px) {
         justify-content: center;
       }
@@ -88,6 +101,7 @@ button:focus {
     &.left-list {
       justify-content: flex-start;
       display: none;
+
       @media screen and(min-width: 480px) {
         display: flex;
       }
@@ -106,14 +120,17 @@ button:focus {
     &.user-name {
       display: flex;
       align-items: center;
+
       .user-img {
         width: 40px;
         height: 40px;
         border-radius: 50%;
         margin-right: 5px;
       }
+
       .user-title {
         display: none;
+
         @media screen and (min-width: 480px) {
           display: inline-block;
         }
@@ -122,3 +139,23 @@ button:focus {
   }
 }
 
+// Layout
+
+.main-layout {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  padding-top: 60px;
+}
+
+.main-sidebar {
+  background: #fff;
+  border-right: 1px solid #cdcdcd;
+  flex: 0 0 250px;
+  padding: 30px;
+}
+
+.main-content {
+  background: #f0f0f0;
+  flex-grow: 1;
+}
