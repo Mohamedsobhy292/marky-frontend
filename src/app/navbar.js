@@ -33,7 +33,7 @@ const Navbar = ({loggedIn, userName}) => {
           <li className="main-nav__link">Boards</li> : <li className="main-nav__link">Sign Up</li>
         }
       </ul>
-      <div className="main-nav__list">
+      <div className="main-nav__list logo-container">
         <img src={logo} alt="" height="50" />
       </div>
       {userArea()}

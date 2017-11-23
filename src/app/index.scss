@@ -65,24 +65,32 @@ button:focus {
   }
 
   &__list {
-    flex-basis: 33.33%;
+    flex: 1 ;
     display: flex;
     justify-content: center;
     align-items: center;
 
     &.right-list {
       justify-content: flex-end;
-
+      width: 50%;
       li {
-        margin-left: 0;
-        @media screen and(min-width: 480px) {
-          margin-left: 15px;
-        }
+        margin-left: 15px;
+      }
+    }
+
+    &.logo-container {
+      justify-content: flex-start;
+      @media screen and(min-width: 480px) {
+        justify-content: center;
       }
     }
 
     &.left-list {
       justify-content: flex-start;
+      display: none;
+      @media screen and(min-width: 480px) {
+        display: flex;
+      }
 
       li {
         margin-right: 15px;
@@ -91,10 +99,6 @@ button:focus {
 
     .primary-btn {
       padding: 6px 15px;
-      display: none;
-      @media screen and (min-width: 480px) {
-        display: inline-block;
-      }
     }
   }
 

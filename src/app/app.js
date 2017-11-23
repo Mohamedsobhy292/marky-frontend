@@ -4,7 +4,7 @@ import './app.scss';
 
 const App = () => (
   <div className="App">
-    <Navbar />
+    <Navbar loggedIn />
   </div>
 );
 
