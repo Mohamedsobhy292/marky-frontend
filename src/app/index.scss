@@ -1,9 +1,20 @@
+$primary-color: #66BFBF;
+
 @font-face {
   font-family: 'Roboto';
   src:
     url('../assets/fonts/Roboto-Regular.woff2') format('woff2'),
     url('../assets/fonts/Roboto-Regular.woff') format('woff'),
     url('../assets/fonts/Roboto-Regular.ttf')  format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-weight: bold;
+  src:
+    url('../assets/fonts/Roboto-Bold.woff2') format('woff2'),
+    url('../assets/fonts/Roboto-Bold.woff') format('woff'),
+    url('../assets/fonts/Roboto-Bold.ttf')  format('truetype');
 }
 
 * {
@@ -28,6 +39,17 @@ ul {
   list-style: none;
 }
 
+h1,h2,h3,h4,h5,h6 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #666;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .container {
   width: 1200px;
   padding-right: 15px;
@@ -45,15 +67,21 @@ button:focus {
 }
 
 .primary-btn {
-  background: #66BFBF;
+  background: $primary-color;
   color: #fff;
 
   &:hover {
-    background: lighten(#66BFBF, 5%);
+    background: lighten($primary-color, 5%);
   }
 }
 
-/// Navbar
+.secondary-btn {
+  border: 1px solid #868689;
+  color: #868689;
+  background: none;
+}
+
+// Navbar
 
 .main-nav {
   height: 60px;
@@ -152,10 +180,47 @@ button:focus {
   background: #fff;
   border-right: 1px solid #cdcdcd;
   flex: 0 0 250px;
-  padding: 30px;
+  padding: 30px 15px;
+  display: none;
+
+  &__boards {
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+
+  &__list-item {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+    color: #666;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  &__title {
+    color: #868689;
+  }
+
+  .list-item-icon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 3px;
+    margin-right: 15px;
+  }
+
+  .new-board-btn {
+    width: 100%;
+    height: 40px;
+  }
+  @media screen and (min-width: 480px) {
+    display: block;
+  }
 }
 
 .main-content {
   background: #f0f0f0;
   flex-grow: 1;
 }
+
+// Sidebar
