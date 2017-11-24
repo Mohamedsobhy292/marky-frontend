@@ -5,18 +5,22 @@ const data = [
   {
     name: 'First Board',
     id: 555,
+    color: '#D45D79',
   },
   {
     name: 'First Board',
     id: 555,
+    color: '#F9B248',
   },
   {
     name: 'First Board',
     id: 555,
+    color: '#C4AFF0',
   },
   {
     name: 'First Board',
     id: 555,
+    color: '#D45D79',
   },
 ];
 

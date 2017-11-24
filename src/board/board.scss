@@ -7,13 +7,14 @@
     flex: 0 1 25%;
   }
 }
+
 .board-component {
   width: 100%;
   background: #fff;
   margin-bottom: 30px;
-  padding: 15px;
+  padding: 10px;
   min-height: 80px;
-  border-left: 2px solid #66BFBF;
+  border-left: 4px solid #66BFBF;
   box-shadow: 0 0 20px 6px #bcdada33;
 
   &__title {
