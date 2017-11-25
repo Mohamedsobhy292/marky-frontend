@@ -19,7 +19,7 @@ const data = [
   },
   {
     name: 'First Board',
-    id: 555,
+    id: 55,
     color: '#D45D79',
   },
 ];
