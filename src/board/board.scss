@@ -4,22 +4,45 @@
   padding-left: 15px;
   padding-right: 15px;
   @media screen and(min-width: 768px) {
-    flex: 0 1 25%;
+    flex: 0 1 33.3%;
   }
 }
 
 .board-component {
   width: 100%;
+  display: flex;
+  position: relative;
   background: #fff;
   margin-bottom: 30px;
-  padding: 10px;
-  min-height: 80px;
-  border-left: 4px solid #66BFBF;
+  min-height: 90px;
   box-shadow: 0 0 20px 6px #bcdada33;
+  border-radius: 3px;
+  transition: all 0.5s;
 
-  &__title {
-    color: #868689;
-    font-size: 16px;
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px 6px #dedede;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+
+    .board-component__title {
+      color: #868689;
+      font-size: 16px;
+      margin-bottom: 0;
+    }
+
+  }
+
+  &__icon {
+    width: 90px;
+    background: #F67280;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 

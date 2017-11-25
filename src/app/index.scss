@@ -181,7 +181,9 @@ button:focus {
   display: none;
   flex: 0 0 250px;
   padding: 30px 15px;
-  border-right: 1px solid #cdcdcd;
+  // border-right: 1px solid #cdcdcd;
+  box-shadow: 6px 13px 20px 6px #bcdada33;
+  position: relative;
 
   &__boards {
     margin-top: 25px;
