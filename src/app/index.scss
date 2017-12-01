@@ -145,6 +145,13 @@ button:focus {
   }
 
   &__link {
+    &.sign-up-btn {
+      display: inline-block;
+
+      @media screen and (min-width: 480px) {
+        display: none;
+      }
+    }
     &.user-name {
       display: flex;
       align-items: center;
