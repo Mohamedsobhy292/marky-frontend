@@ -1,0 +1,12 @@
+.link-component {
+  margin-bottom: 15px;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+
+  &__logo {
+    width: 20px;
+    margin-right: 10px;
+  }
+
+}

@@ -45,6 +45,10 @@ h1,h2,h3,h4,h5,h6 {
   color: #666;
 }
 
+p {
+  margin: 0;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -178,7 +182,6 @@ button:focus {
 
 .main-layout {
   display: flex;
-  height: 100vh;
   width: 100%;
   padding-top: 60px;
 }

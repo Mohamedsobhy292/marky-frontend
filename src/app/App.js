@@ -3,7 +3,8 @@ import { BrowserRouter, Route} from 'react-router-dom';
 import { Provider } from 'react-redux';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
-import BoardContainer from '../board/boardContainer';
+import UserBoardsContainer from '../userBoards/UserBoardsContainer';
+import Board from '../boards/Board';
 import Store from '../store';
 import './app.scss';
 
@@ -43,7 +44,8 @@ class App extends Component {
                 <Sidebar boardsList={data} />
               }
               <div className="main-content">
-                <Route path="/" component={BoardContainer} />
+                <Route path="/" exact component={UserBoardsContainer} />
+                <Route path="/boards" component={Board} />
               </div>
             </div>
           </div>

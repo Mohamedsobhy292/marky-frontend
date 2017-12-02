@@ -1,5 +1,5 @@
 import React from 'react';
-import Board from './Board';
+import Board from './UserBoards';
 
 const data = [
   {
@@ -24,7 +24,7 @@ const data = [
   },
 ];
 
-const boardContainer = () => (
+const UserBoardsContainer = () => (
   <div className="boards-list">
     {
         data.map(item => (
@@ -37,4 +37,4 @@ const boardContainer = () => (
   </div>
 );
 
-export default boardContainer;
+export default UserBoardsContainer;

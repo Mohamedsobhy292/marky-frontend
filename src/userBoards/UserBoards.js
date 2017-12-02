@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './board.scss';
+import './UserBoards.scss';
 import home from '../assets/img/home.svg';
 
 function setBgStyle(color) {
@@ -9,7 +9,7 @@ function setBgStyle(color) {
   };
 }
 
-const Board = ({boardData}) => (
+const UserBoard = ({boardData}) => (
   <a className="board-component" href={boardData.id}>
     <div className="board-component__icon" style={setBgStyle(boardData.color)}>
       <img src={home} alt="" width="30" />
@@ -22,8 +22,8 @@ const Board = ({boardData}) => (
   </a>
 );
 
-Board.propTypes = {
+UserBoard.propTypes = {
   boardData: PropTypes.objectOf(PropTypes.node).isRequired,
 };
 
-export default Board;
+export default UserBoard;
