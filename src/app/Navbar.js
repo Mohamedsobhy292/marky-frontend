@@ -38,7 +38,9 @@ class Navbar extends Component {
           }
         </ul>
         <div className="main-nav__list logo-container">
-          <img src={logo} alt="" height="50" />
+          <a href="/">
+            <img src={logo} alt="" height="50" />
+          </a>
         </div>
         {this.userArea()}
       </nav>

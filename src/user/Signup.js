@@ -1,13 +1,13 @@
 import React from 'react';
-import './Login.scss';
+import './User.scss';
 
-const Login = () => (
+const SignUp = () => (
   <div className="login-container">
     <div className="login-form-wrapper">
       <form className="login-form">
-        <h1 className="login-form__title">Login to Your Account</h1>
+        <h1 className="login-form__title">Create a new Account</h1>
         <p className="login-form__desc">
-          Login to your account in order to view your saved links and boards or add new ones
+          Create a new account in order to or add and save links
         </p>
         <div className="form-group">
           <label className="login-form__label" htmlFor="email">Email</label>
@@ -19,6 +19,15 @@ const Login = () => (
           />
         </div>
         <div className="form-group">
+          <label className="login-form__label" htmlFor="Name">Name</label>
+          <input
+            type="text"
+            placeholder="enter your Name"
+            className="login-form__field"
+            id="Name"
+          />
+        </div>
+        <div className="form-group">
           <label className="login-form__label" htmlFor="password">Password</label>
           <input
             type="password"
@@ -27,13 +36,22 @@ const Login = () => (
             id="password"
           />
         </div>
+        <div className="form-group">
+          <label className="login-form__label" htmlFor="password2">Confirm Password</label>
+          <input
+            type="password"
+            placeholder="enter your password again"
+            className="login-form__field"
+            id="password2"
+          />
+        </div>
         <button className="primary-btn login-form__login-btn">Login</button>
         <div className="login-form__social-area">
           <h5>or</h5>
           <div className="login-form__social-list">
             <a href="#/ss" className="login-form__social-login-btn facebook">Facebook</a>
             <a href="#/ss" className="login-form__social-login-btn google">Google</a>
-            <a href="/signup" className="login-form__social-login-btn signup">Sign up</a>
+            <a href="/user/login" className="login-form__social-login-btn">Login</a>
           </div>
         </div>
       </form>
@@ -41,4 +59,4 @@ const Login = () => (
   </div>
 );
 
-export default Login;
+export default SignUp;
