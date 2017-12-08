@@ -5,6 +5,7 @@ import Navbar from './Navbar';
 import Sidebar from './Sidebar';
 import UserBoardsContainer from '../userBoards/UserBoardsContainer';
 import Board from '../boards/Board';
+import Login from '../login/Login';
 import Store from '../store';
 import './app.scss';
 
@@ -46,6 +47,7 @@ class App extends Component {
               <div className="main-content">
                 <Route path="/" exact component={UserBoardsContainer} />
                 <Route path="/boards" component={Board} />
+                <Route path="/login" component={Login} />
               </div>
             </div>
           </div>
