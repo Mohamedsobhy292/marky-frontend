@@ -1,5 +1,13 @@
+/* global FB */
 import React from 'react';
 import './User.scss';
+
+function facebookLogin() {
+  FB.login((response) => {
+    console.log(response); //eslint-disable-line
+  }, {scope: 'email, public_profile'});
+}
+
 
 const Login = () => (
   <div className="login-container">
@@ -31,7 +39,12 @@ const Login = () => (
         <div className="login-form__social-area">
           <h5>or</h5>
           <div className="login-form__social-list">
-            <a href="#/ss" className="login-form__social-login-btn facebook">Facebook</a>
+            <button
+              href="#/ss"
+              className="login-form__social-login-btn facebook"
+              onClick={facebookLogin}
+            >Facebook
+            </button>
             <a href="#/ss" className="login-form__social-login-btn google">Google</a>
             <a href="/user/signup" className="login-form__social-login-btn signup">Sign up</a>
           </div>
