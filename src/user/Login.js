@@ -2,7 +2,8 @@
 import React from 'react';
 import './User.scss';
 
-function facebookLogin() {
+function facebookLogin(e) {
+  e.preventDefault();
   FB.login((response) => {
     console.log(response); //eslint-disable-line
   }, {scope: 'email, public_profile'});
@@ -40,7 +41,6 @@ const Login = () => (
           <h5>or</h5>
           <div className="login-form__social-list">
             <button
-              href="#/ss"
               className="login-form__social-login-btn facebook"
               onClick={facebookLogin}
             >Facebook

@@ -28,22 +28,16 @@
   <script>
       window.fbAsyncInit = function() {
         FB.init({
-          appId      : '1462828900473195',
+          appId      : '1483215068431084',
+          channelUrl : '',
+          status     : true,
           cookie     : true,
           xfbml      : true,
           version    : 'v2.10'
         });
 
-        FB.login(function(response) {
-        console.log(response);
-        if (response.authResponse) {
-            // The person logged into your app
-        } else {
-            // The person cancelled the login dialog
-        }
-    });
-
         FB.AppEvents.logPageView();
+
       };
 
       (function(d, s, id){
@@ -53,10 +47,7 @@
         js.src = "https://connect.facebook.net/en_US/sdk.js";
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
-
-
-
-    </script>
+  </script>
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
