@@ -5,7 +5,12 @@ const initialUserState = {
 const user = (state = initialUserState, action) => {
   switch (action.type) {
     case 'LOG_IN':
-      return {...state, isAuthenticated: true, name: 'ww'};
+      return {
+        isAuthenticated: true,
+        name: action.name,
+        token: action.token,
+        pic: action.pic,
+      };
     case 'LOG_OUT':
       return {isAuthenticated: false};
     default:

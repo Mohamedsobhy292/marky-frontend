@@ -1,21 +1,9 @@
 /* eslint-disable */
-import { createStore, combineReducers } from 'redux';
-import user from './app/AppReducer';
-
-const intialState = {
-  user: {
-    isAuthenticated: false,
-  },
-};
-
-const reducers = combineReducers({
-  user,
-});
-
+import { createStore } from 'redux';
+import mainReducer from './reducers';
 
 const store = createStore(
-  reducers,
-  intialState,
+  mainReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 

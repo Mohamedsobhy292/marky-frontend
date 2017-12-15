@@ -10,7 +10,7 @@ class Navbar extends Component {
       return (
         <ul className="main-nav__list right-list">
           <li className="main-nav__link user-name">
-            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg" className="user-img" alt="userPic" />
+            <img src={this.props.user.pic} className="user-img" alt="userPic" />
             <span className="user-title">{this.props.user.name}</span>
           </li>
           <li className="main-nav__link">
@@ -49,6 +49,7 @@ class Navbar extends Component {
 }
 
 Navbar.defaultProps = {
+  isAuthenticated: false,
   user: {
     name: 'Stranger',
   },
@@ -56,7 +57,7 @@ Navbar.defaultProps = {
 
 Navbar.propTypes = {
   user: PropTypes.objectOf(PropTypes.any),
-  isAuthenticated: PropTypes.bool.isRequired,
+  isAuthenticated: PropTypes.bool,
 };
 
 const mapStateToProps = store => (
