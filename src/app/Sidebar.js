@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
 
 function setBgStyle(itembackround) {
   return {
@@ -7,20 +8,25 @@ function setBgStyle(itembackround) {
   };
 }
 
-const Sidebar = ({boardsList}) => (
-  <div className="main-sidebar">
-    <h5 className="main-sidebar__title">Your Boards</h5>
-    <ul className="main-sidebar__boards">
-      {boardsList.map(item => (
-        <li className="main-sidebar__list-item">
-          <span className="list-item-icon" style={setBgStyle(item.color)} />
-          <a href={item.id}>{item.name}</a>
-        </li>
-        ))}
-    </ul>
-    <button className="secondary-btn new-board-btn">New Board </button>
-  </div>
-);
+const Sidebar = ({boardsList, loggedIn}) => {
+  if (loggedIn) {
+    return (
+      <div className="main-sidebar">
+        <h5 className="main-sidebar__title">Your Boards</h5>
+        <ul className="main-sidebar__boards">
+          {boardsList.map(item => (
+            <li className="main-sidebar__list-item">
+              <span className="list-item-icon" style={setBgStyle(item.color)} />
+              <a href={item.id}>{item.name}</a>
+            </li>
+            ))}
+        </ul>
+        <button className="secondary-btn new-board-btn">New Board </button>
+      </div>
+    );
+  }
+  return '';
+};
 
 Sidebar.defaultProps = {
   boardsList: [],
@@ -28,6 +34,14 @@ Sidebar.defaultProps = {
 
 Sidebar.propTypes = {
   boardsList: PropTypes.arrayOf(PropTypes.object),
+  loggedIn: PropTypes.bool.isRequired,
 };
 
-export default Sidebar;
+const mapStateToProps = store => (
+  {
+    loggedIn: store.user.isAuthenticated,
+  }
+);
+
+
+export default connect(mapStateToProps)(Sidebar);

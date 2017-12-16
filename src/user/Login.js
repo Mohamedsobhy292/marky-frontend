@@ -2,11 +2,12 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
+import {Redirect} from 'react-router-dom';
 import axios from 'axios';
 import './User.scss';
 import {logInAction} from './userActions';
 
-const Login = ({logIn}) => {
+const Login = ({logIn, history, loggedIn}) => {
   function facebookLogin(e) {
     e.preventDefault();
     FB.login((response) => {
@@ -20,10 +21,16 @@ const Login = ({logIn}) => {
         }).then((res) => {
           FB.api('/me', { fields: 'id, name, email, picture' }, (fbdata) => {
             logIn(res.data.token, fbdata.name, fbdata.picture.data.url);
+            history.push('/boards');
           });
         });
       }
     }, {scope: 'email, public_profile'});
+  }
+  if (loggedIn) {
+    return (
+      <Redirect to="/boards" />
+    );
   }
   return (
     <div className="login-container">
@@ -72,11 +79,13 @@ const Login = ({logIn}) => {
 
 Login.propTypes = {
   logIn: PropTypes.func.isRequired,
+  loggedIn: PropTypes.bool.isRequired,
+  history: PropTypes.objectOf(PropTypes.any).isRequired,
 };
 
 const mapStateToProps = store => (
   {
-    users: store,
+    loggedIn: store.user.isAuthenticated,
   }
 );
 

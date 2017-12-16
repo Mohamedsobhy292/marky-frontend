@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 import logo from '../assets/img/logo.svg';
 
 
@@ -21,7 +22,9 @@ class Navbar extends Component {
     }
     return (
       <ul className="main-nav__list right-list">
-        <li className="main-nav__link">Login</li>
+        <li className="main-nav__link">
+          <Link to="user/login" href="/login">Login</Link>
+        </li>
         <li className="main-nav__link sign-up-btn">
           <button className="primary-btn">Sign Up</button>
         </li>
