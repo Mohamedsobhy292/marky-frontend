@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import {Redirect} from 'react-router-dom';
 import axios from 'axios';
 import './User.scss';
+import {googleSignIn, facebookSignIn} from '../utilites/apis';
 import {logInAction} from './userActions';
 
 class Login extends Component {
@@ -14,7 +15,7 @@ class Login extends Component {
       if (response.status === 'connected') {
         axios({
           method: 'post',
-          url: 'http://localhost:4000/users/signin/facebook',
+          url: facebookSignIn,
           data: {
             access_token: response.authResponse.accessToken,
           },
@@ -51,7 +52,17 @@ class Login extends Component {
   googleLogin(e) {
     e.preventDefault();
     this.state.auth2.signIn({fetch_basic_profile: true}).then((res) => {
-      console.log(res); // eslint-disable-line
+      if (res.Zi && res.w3) {
+        axios({
+          method: 'post',
+          url: googleSignIn,
+          data: {
+            access_token: res.Zi.access_token,
+          },
+        }).then((response) => {
+          this.props.logIn(response.data.token, res.w3.ig, res.w3.Paa);
+        });
+      }
     });
   }
 
