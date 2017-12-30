@@ -14,6 +14,7 @@
   text-align: center;
   box-shadow: 0 0 20px 6px #bcdada33;
   border-radius: 3px;
+
   @media screen and (min-width: 768px) {
     width: 500px;
   }
@@ -46,8 +47,17 @@
     font-size: 12px;
   }
 
+  &__error {
+    margin-top: 15px;
+    color: #f44336;
+    font-size: 12px;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+  }
+
   &__social-area {
-    margin-top: 30px;
+    margin-top: 15px;
 
     h5 {
       color: #868689;
@@ -75,7 +85,7 @@
   }
 
   &__social-list {
-    margin-top: 30px;
+    margin-top: 15px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -99,6 +109,10 @@
       background: #dd4b39;
     }
 
+    &.full-width {
+      flex: 1 0 100%;
+    }
+
     @media screen and (min-width: 480px) {
       flex: 0 1 30%;
     }
@@ -106,6 +120,7 @@
 
   .form-group {
     text-align: left;
+    padding-bottom: 10px;
   }
 }
 
